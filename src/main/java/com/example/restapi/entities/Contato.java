@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 //informa que a classe é uma entidade que deve ser persistida no banco de dados
 @Entity
 public class Contato {
+    //Mapeamento
     @Id //identificador da entidade
     @GeneratedValue(strategy = GenerationType.IDENTITY) // valor gerado automaticamente (autoincrement)
     private Long id;
@@ -20,7 +21,6 @@ public class Contato {
     private String telefone;
     @Column(nullable = false)
     private String email;
-    private String urlAvatar;
 
     public Long getId() {
         return id;
@@ -45,11 +45,5 @@ public class Contato {
     }
     public void setEmail(String email) {
         this.email = email;
-    }
-    public String getUrlAvatar() {
-        return urlAvatar;
-    }
-    public void setUrlAvatar(String urlAvatar) {
-        this.urlAvatar = urlAvatar;
     }
 }
